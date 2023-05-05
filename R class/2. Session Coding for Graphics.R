@@ -1,7 +1,7 @@
 library(readxl)
 X2_Session_Data_gdp <- read_excel("R class/2. Session Data_gdp.xlsx", 
                                   sheet = "data", skip = 2)
-View(X2_Session_Data_gdp)
+View(X2_Session_Data_gdp) 
 countries <- c("France","Germany", "Italy", "Spain")
 cols <- c("blue","red","green","orange")
 
