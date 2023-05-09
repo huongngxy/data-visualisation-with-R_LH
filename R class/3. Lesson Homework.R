@@ -13,7 +13,7 @@ for(i in 1:length(countries)) {
        y = consumption_share[X3_Lesson_Data_mpc$country == countries[i]], 
        main = countries[i],
        xlab = "Year",
-       ylab = "Consumption Share", 
+       ylab = "Consumption Share in %", 
        type = "l",
        col = cols[i])  
 }
