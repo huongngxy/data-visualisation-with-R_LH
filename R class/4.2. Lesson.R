@@ -1,6 +1,6 @@
 rm(list=ls())
 
-wage1$gender <- ifelse(wage1$female == 0, "Male", "Female")
+wage1$gender <- ifelse(wage1$female == 0, "Male", "Female") #if value = 0 then male, otherwise (=1) female 
 cols <- c("blue","red")
 gender <- c("Male", "Female")
 
@@ -17,13 +17,14 @@ for (i in 1: length(gender)) {
          col = cols[i])
 }
 
-boxplot(wage1$wage [wage1$female == 1],
-        wage1$wage [wage1$male == 1],
+boxplot(wage1$wage [wage1$female == 0],
+        wage1$wage [wage1$female == 1],
         ylab = "Dollar per Hour",
         xlab = "Gender",
-        names = c("Female", "Male"),
-        col = c("blue", "red"),
+        names = c("Male", "Female"),
+        col = c("cyan", "pink"),
         horizontal = TRUE)
+
 
 
 
