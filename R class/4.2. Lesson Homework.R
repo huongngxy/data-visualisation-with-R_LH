@@ -34,7 +34,6 @@ rm(list=ls())
 
 library(wooldridge)
 library(corrplot)
-library(plotly)
 
 
 wage1$seperation <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
