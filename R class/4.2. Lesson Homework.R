@@ -32,8 +32,8 @@ barplot(A,
  # using the For Loop 
 rm(list=ls())
 
-library(wooldridge)
-library(corrplot)
+library(wooldridge) 
+library(corrplot) 
 
 
 wage1$seperation <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
