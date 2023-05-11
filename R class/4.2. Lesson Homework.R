@@ -29,7 +29,7 @@ barplot(A,
 
 
 # 2.Solution ----
- # using the for loop 
+ # using the For Loop 
 rm(list=ls())
 
 library(wooldridge)
@@ -48,7 +48,7 @@ for (i in 1: length(seperation)) {
 }
 
 barplot(Aver,
-        names = c("Married men","Single men","Single women", "Married women"),
+        names = c("married men","single men","single women", "married women"),
         col = c("lightblue","lightblue","pink","pink"),
         ylab = "Dollar per Hour",
         ylim = c(0,10),
