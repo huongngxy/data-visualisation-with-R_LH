@@ -5,7 +5,7 @@ rm(list=ls())
 library(wooldridge)
 library(corrplot)
 
-View(wage1)
+View(wage1) 
 
 wage1$seperation <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
                            ifelse(wage1$female == 0 & wage1$married == 0, "single men",
