@@ -21,11 +21,11 @@ d <- mean(wage1$wage[wage1$seperation == "married women"])
 A <- c(a,b,c,d)
 
 barplot(A,
-        names = c("Married men","Single men","Single women", "Married women"),
+        names = c("married men","single men","single women", "married women"),
         col = c("lightblue","lightblue","pink","pink"),
         ylab = "Dollar per Hour",
         ylim = c(0,10),
-        main = "Mean hourly wage by gender and marital status")
+        main = "Mean Hourly Wage by Gender and Marital Status")
 
 
 # 2.Solution ----
@@ -50,4 +50,4 @@ barplot(Aver,
         col = c("lightblue","lightblue","pink","pink"),
         ylab = "Dollar per Hour",
         ylim = c(0,10),
-        main = "Mean hourly wage by gender and marital status")
+        main = "Mean Hourly Wage by Gender and Marital Status")
