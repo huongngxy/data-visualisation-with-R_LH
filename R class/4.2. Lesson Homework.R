@@ -3,14 +3,13 @@
 rm(list=ls())
 
 library(wooldridge) 
-library(corrplot)
 
 View(wage1) 
 
 wage1$seperation <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
                            ifelse(wage1$female == 0 & wage1$married == 0, "single men",
                                   ifelse(wage1$female == 1 & wage1$married == 0, "single women", "married women")))
-seperation <- c("single men","married men","single women", "married women")
+seperation <- c("married men","single men","single women", "married women")
 
 
 a <- mean(wage1$wage[wage1$seperation == "married men"])
@@ -33,7 +32,6 @@ barplot(A,
 rm(list=ls()) 
 
 library(wooldridge) 
-library(corrplot) 
 
 wage1$seperation <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
                            ifelse(wage1$female == 0 & wage1$married == 0, "single men",
