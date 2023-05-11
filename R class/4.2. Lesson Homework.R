@@ -2,7 +2,7 @@
 
 rm(list=ls())
 
-library(wooldridge)
+library(wooldridge) 
 library(corrplot)
 
 View(wage1) 
