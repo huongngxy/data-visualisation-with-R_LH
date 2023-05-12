@@ -27,7 +27,7 @@ legend("topleft",
 
 
 
-par(mfrow=c(2,2))
+par(mfrow=c(2,2)) 
 for(i in 1: length(countries)){
   plot(NULL, 
        xlim=c(1960,2022),
