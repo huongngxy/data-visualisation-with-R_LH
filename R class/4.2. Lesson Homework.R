@@ -29,7 +29,7 @@ barplot(A,
 
 # 2.Solution ----
  # using the For Loop 
-rm(list=ls()) 
+rm(list=ls())  
 
 library(wooldridge) 
 
