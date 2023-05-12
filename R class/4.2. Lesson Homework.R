@@ -4,7 +4,7 @@ rm(list=ls())
 
 library(wooldridge) 
 
-View(wage1) 
+View(wage1)  
 
 wage1$categories <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
                            ifelse(wage1$female == 0 & wage1$married == 0, "single men",
