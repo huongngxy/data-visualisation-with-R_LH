@@ -45,7 +45,7 @@ for (i in 1: length(categories)) {
 
 barplot(Aver,
         names = c("married men","single men","single women", "married women"),
-        col = c("lightblue","lightblue","pink","pink"),
+        col = c("lightblue","lightblue","pink","pink"), 
         ylab = "Dollar per Hour",
         ylim = c(0,10), 
         main = "Mean Hourly Wage by Gender and Marital Status")
