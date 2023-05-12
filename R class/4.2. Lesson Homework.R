@@ -30,7 +30,7 @@ barplot(A,
 # 2.Solution ----
  # using the For Loop 
 rm(list=ls())  
-
+ 
 library(wooldridge) 
 
 wage1$categories <- ifelse(wage1$female == 0 & wage1$married == 1, "married men", 
