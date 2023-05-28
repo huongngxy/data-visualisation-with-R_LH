@@ -60,7 +60,7 @@ cols <- c("Germany" ="blue",
 p2 <- ggplot(df_final, aes(x = Year,
                            y = value, 
                            group = Country,
-                           color = Country)) + 
+                           color = Country)) +  
   scale_color_manual(values = cols) + 
   geom_line() +
   theme_bw() +
