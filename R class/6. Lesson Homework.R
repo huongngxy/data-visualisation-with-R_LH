@@ -1,7 +1,7 @@
 rm(list =ls())
 library(ggplot2)
 library(dplyr)
-library(rdbnomics)
+library(rdbnomics) 
 
 ctrycode <- c("FRA","DEU","D_W","ITA","NLD","ESP","USA")
 countries <- paste0("AMECO/ZUTN/", ctrycode, ".1.0.0.0.ZUTN")
