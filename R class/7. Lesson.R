@@ -59,7 +59,7 @@ rm(list=ls())
 library(here)
 library(tidyr)
 library(dplyr) 
-library(ggplot2)
+library(ggplot2) 
 library(rdbnomics)
 
 cols <- c("Germany" ="blue",
