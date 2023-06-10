@@ -1,3 +1,4 @@
+rm(list=ls()) 
 library(readxl)
 X3_Lesson_Data_mpc <- read_excel("R class/3. Lesson Data_mpc.xlsx", 
                                  sheet = "Tabelle1", skip = 1)
