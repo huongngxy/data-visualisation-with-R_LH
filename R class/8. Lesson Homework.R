@@ -47,7 +47,6 @@ plot <- ggplot(final, aes(x = years,
   theme_bw() + 
   scale_color_manual(values = cols) + 
   theme(legend.position = "bottom", legend.title = element_blank()) +
-  scale_fill_manual("none") +
   scale_linetype_manual(values = c("China" = "solid", "Minimum" = "dashed","Maximum" = "dashed","Median" = "dashed"))+
   labs(y = "Life expectancy at birth", 
        x = "Year",
