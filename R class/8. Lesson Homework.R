@@ -41,18 +41,21 @@ final <- semifinal %>%
   group_by(Category)
 head(final)
   
-plt <- ggplot(final, aes(x = years, 
+plot <- ggplot(final, aes(x = years, 
                           y = Life_expectancy,
                           group = Category, 
                           color = Category)) + 
-  geom_line() +
+  geom_line(aes(linetype = Category), size = 1) +
   theme_bw() + 
   scale_color_manual(values = cols) + 
-  theme(legend.position = "bottom") +
-  labs(color = NULL,
-       y = "Life expectancy at birth", 
+  theme(legend.position = "bottom", legend.title = element_blank()) +
+  scale_fill_manual("none") +
+  scale_linetype_manual(values = c("China" = "solid", "Minimum" = "dashed","Maximum" = "dashed","Median" = "dashed"))+
+  labs(y = "Life expectancy at birth", 
        x = "Year",
        caption = "Source: Gapminder")
-plt
+plot
+
+
 
 
