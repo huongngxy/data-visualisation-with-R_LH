@@ -2,7 +2,6 @@ rm(list=ls())
 
 library(ggplot2)
 library(dplyr)
-library(tidyverse)
 library(gapminder)
 
 years <- unique(gapminder$year) 
