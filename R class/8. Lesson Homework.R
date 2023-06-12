@@ -10,36 +10,45 @@ cols <- c("Median" = "steelblue",
           "Minimum" = "darkorange",
           "Maximum" = "darkred",
           "China" = "black")
-View(gapminder)
+#View(gapminder)
 
-Maximum <- vector("numeric",length(years))
-for (a in 1: length(years)) {
-  (Maximum[a] <- max(gapminder$lifeExp[gapminder$year == years[a]]))
-}
+# Maximum <- vector("numeric",length(years))
+# for (a in 1: length(years)) {
+#   (Maximum[a] <- max(gapminder$lifeExp[gapminder$year == years[a]]))
+# }
+# 
+# Minimum <- vector("numeric",length(years))
+# for(l in 1: length(years)) {
+#   (Minimum[l] <- min(gapminder$lifeExp[gapminder$year == years[l]]))
+# } 
+# 
+# Median <- vector("numeric", length(years))
+# for(b in 1: length(years)) {
+#   (Median[b] <- median(gapminder$lifeExp[gapminder$year == years[b]]))
+# }
 
-Minimum <- vector("numeric",length(years))
-for(l in 1: length(years)) {
-  (Minimum[l] <- min(gapminder$lifeExp[gapminder$year == years[l]]))
-} 
-
-Median <- vector("numeric", length(years))
-for(b in 1: length(years)) {
-  (Median[b] <- median(gapminder$lifeExp[gapminder$year == years[b]]))
-}
+df <- gapminder %>% 
+  group_by(year) %>% 
+  summarise(Minimum = min(lifeExp), 
+            Maximum = max(lifeExp),
+            Median = median(lifeExp))
 
 China <- gapminder %>%
   filter(country %in% c("China")) %>%
-  select(lifeExp) %>%
+  select(lifeExp, year) %>%
   rename(China = lifeExp)
 
-semifinal <- data.frame(years, Maximum, Minimum, Median, China)
+semifinal <- df %>% 
+  inner_join(China, by = "year")
+
+#semifinal <- data.frame(years, Maximum, Minimum, Median, China)
 final <- semifinal %>%
-  select(years, Maximum, Minimum, Median, China) %>%
-  gather(key = "Category", value = "Life_expectancy", -years) %>%
+  #select(year, Maximum, Minimum, Median, China) %>%
+  gather(key = "Category", value = "Life_expectancy", -year) %>%
   mutate(Life_expectancy = as.numeric(Life_expectancy)) %>%
   group_by(Category)
   
-plot <- ggplot(final, aes(x = years, 
+plot <- ggplot(final, aes(x = year, 
                           y = Life_expectancy,
                           group = Category, 
                           color = Category)) + 
@@ -52,7 +61,3 @@ plot <- ggplot(final, aes(x = years,
        x = "Year",
        caption = "Source: Gapminder")
 plot
-
-
-
-
