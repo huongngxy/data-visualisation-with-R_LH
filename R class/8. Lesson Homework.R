@@ -6,9 +6,9 @@ library(tidyverse)
 library(gapminder)
 
 years <- unique(gapminder$year)
-cols <- c("Median" = "steelblue",
+cols <- c("Median" = "darkblue",
           "Minimum" = "darkorange",
-          "Maximum" = "darkred",
+          "Maximum" = "red",
           "China" = "black")
 View(gapminder)
 
